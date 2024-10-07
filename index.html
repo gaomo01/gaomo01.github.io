@@ -1,72 +1,95 @@
-<!DOCTYPE html>  
-<html lang="zh-CN">  
-<head>  
-    <meta charset="utf-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>我的网页封面</title>  
-    <style>
-body, html {  
-    margin: 0;  
-    padding: 0;  
-    height: 100%;  
-    font-family: Arial, sans-serif;  
-}  
+<!DOCTYPE html>    
+<html lang="zh-CN">    
+<head>    
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>我的网页封面</title>    
+    <style>  
+    body, html {    
+        margin: 0;    
+        padding: 0;    
+        height: 100%;    
+        font-family: Arial, sans-serif;    
+    }    
+    
+    /* 封面样式 */    
+    .cover {    
+        position: relative;    
+        width: 100%;    
+        height: 100vh; /* 视口高度 */    
+        background: url('cover-image.jpg') no-repeat center center/cover; /* 替换为你的封面图片 */    
+        color: white;    
+        display: flex;    
+        justify-content: center;    
+        align-items: center;    
+        text-align: center;    
+    }    
+    
+    /* 封面内容样式 */    
+    .cover-content {    
+        background: rgba(0, 0, 0, 0.5); /* 半透明背景 */    
+        padding: 20px;    
+        border-radius: 10px;    
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);    
+    }    
+    
+    /* 标题和段落样式 */    
+    .cover-content h1 {    
+        font-size: 3em;    
+        margin: 0;    
+        display: inline-block; /* 使其成为一个内联块元素 */  
+        overflow: hidden; /* 隐藏溢出的内容 */  
+        white-space: nowrap; /* 禁止换行 */  
+        /* CSS 动画 */  
+        animation: textReveal 2s steps(12, end) forwards; /* 12 是字符数量，可以根据实际调整 */  
+    }  
   
-/* 封面样式 */  
-.cover {  
-    position: relative;  
-    width: 100%;  
-    height: 100vh; /* 视口高度 */  
-    background: url('cover-image.jpg') no-repeat center center/cover; /* 替换为你的封面图片 */  
-    color: white;  
-    display: flex;  
-    justify-content: center;  
-    align-items: center;  
-    text-align: center;  
-}  
+    .cover-content h1 span {  
+        display: inline-block; /* 保持内联块显示 */  
+    }  
   
-/* 封面内容样式 */  
-.cover-content {  
-    background: rgba(0, 0, 0, 0.5); /* 半透明背景 */  
-    padding: 20px;  
-    border-radius: 10px;  
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  
-}  
+    @keyframes textReveal {  
+        from {  
+            width: 0;  
+        }  
+        to {  
+            width: 100%;  
+        }  
+    }  
   
-/* 标题和段落样式 */  
-.cover-content h1 {  
-    font-size: 3em;  
-    margin: 0;  
-}  
+    .cover-content p {    
+        font-size: 1.5em;    
+        margin: 10px 0 20px;    
+    }    
+    
+    /* 按钮样式 */    
+    .cover-content button {    
+        padding: 10px 20px;    
+        font-size: 1em;    
+        border: none;    
+        border-radius: 5px;    
+        background-color: rgba(255, 255, 255, 0.7);    
+        cursor: pointer;    
+        transition: background-color 0.3s;    
+    }    
+    
+    .cover-content button:hover {    
+        background-color: rgba(255, 255, 255, 1);    
+    }  
   
-.cover-content p {  
-    font-size: 1.5em;  
-    margin: 10px 0 20px;  
-}  
-  
-/* 按钮样式 */  
-.cover-content button {  
-    padding: 10px 20px;  
-    font-size: 1em;  
-    border: none;  
-    border-radius: 5px;  
-    background-color: rgba(255, 255, 255, 0.7);  
-    cursor: pointer;  
-    transition: background-color 0.3s;  
-}  
-  
-.cover-content button:hover {  
-    background-color: rgba(255, 255, 255, 1);  
-}
-	</style>
-</head>  
-<body background="DailyBing.com-zh-cn-20240910-FHD.jpg">  
-    <div class="cover">  
-        <div class="cover-content">  
-            <h1>欢迎来到我的博客🎉</h1>  
-            <p>&nbsp;</p>  
-            <button onclick="location.href='mainpage.html'">进入博客</button>  
-        </div>  
-    </div>  
-</body>  
+    /* 移除body背景图片，因为已在.cover中设置了背景 */  
+    body {  
+        background=“DailyBing.com-zh-cn-20240910-FHD.jpg”;  
+    }  
+	</style>  
+</head>    
+<body background="DailyBing.com-zh-cn-20240910-FHD.jpg">    
+    <div class="cover">    
+        <div class="cover-content">    
+            <h1><span>欢迎来到我的博客🎉</span></h1>    
+            <p>&nbsp;</p>    
+            <button onclick="location.href='mainpage.html'">进入博客</button>    
+        </div>    
+    </div>    
+</body>    
 </html>
