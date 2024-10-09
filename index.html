@@ -3,7 +3,7 @@
 <head>    
     <meta charset="utf-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <title>我的网页封面</title>    
+    <title>我的博客</title>    
     <style>  
     body, html {    
         margin: 0;    
@@ -17,7 +17,7 @@
         position: relative;    
         width: 100%;    
         height: 100vh; /* 视口高度 */    
-        background: url('cover-image.jpg') no-repeat center center/cover; /* 替换为你的封面图片 */    
+        background: url('壁纸.jpg') no-repeat center center/cover; /* 替换为你的封面图片 */    
         color: white;    
         display: flex;    
         justify-content: center;    
@@ -77,19 +77,188 @@
         background-color: rgba(255, 255, 255, 1);    
     }  
   
-    /* 移除body背景图片，因为已在.cover中设置了背景 */  
-    body {  
-        background=“DailyBing.com-zh-cn-20240910-FHD.jpg”;  
-    }  
+    /* 移除body背景图片，因为已在.cover中设置了背景 */   
 	</style>  
 </head>    
-<body background="DailyBing.com-zh-cn-20240910-FHD.jpg">    
+	<body>
     <div class="cover">    
         <div class="cover-content">    
             <h1><span>欢迎来到我的博客🎉</span></h1>    
             <p>&nbsp;</p>    
-            <button onclick="location.href='mainpage.html'">进入博客</button>    
+            <button onclick="scrollToElement()">进入博客</button>  
+  
+<div id="targetElement" style="margin-top: 100px;">  
+</div>  
+  
+<script>  
+function scrollToElement() {  
+    var element = document.getElementById('blog-title');  
+    if (element) {  
+        element.scrollIntoView({ behavior: 'smooth' });  
+    }  
+}  
+</script>    
         </div>    
     </div>    
 </body>    
+</html>
+
+<!DOCTYPE html>  
+<html lang="zh-CN">  
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <style>
+	body {    
+        font-family: Arial, sans-serif;    
+        margin: 0;    
+        padding: 0;    
+        line-height: 1.6;    
+        background-color: #f6f8fa;    
+        transition: background-color 0.5s ease; /* 添加背景色渐变效果 */  
+    }  
+	body:hover {  
+        background-color: #eaeff5; /* 当鼠标悬停在页面上时改变背景色 */
+    }
+	.container {    
+        width: 80%;    
+        margin: 0 auto;    
+        overflow: hidden;    
+    }    
+	header {    
+        background: #24292e;    
+        color: #ffffff;    
+        padding-top: 30px;    
+        min-height: 70px;    
+        border-bottom: #e1e4e8 1px solid;  
+        transition: background 0.3s ease, transform 0.3s ease; /* 添加背景渐变和缩放效果 */  
+    }  
+	header:hover {  
+        background: #33383d; /* 当鼠标悬停在header上时改变背景色 */  
+        transform: translateY(-5px); /* 稍微向下移动以增加视觉反馈 */  
+    }  
+	header h1 {    
+        text-align: center;    
+        text-transform: uppercase;    
+        margin: 0;    
+        font-size: 24px;  
+        transition: font-size 0.3s ease; /* 添加字体大小渐变效果 */  
+    }  
+	header:hover h1 {  
+        font-size: 26px; /* 当鼠标悬停在header上时稍微增大字体 */  
+    }  
+  
+    nav ul li a {    
+        color: #ffffff;    
+        text-decoration: none;    
+        font-size: 16px;  
+        transition: color 0.3s ease, transform 0.3s ease; /* 添加颜色渐变和缩放效果 */  
+    }  
+  
+    nav ul li a:hover {  
+        color: #0366d6; /* 当鼠标悬停在链接上时改变颜色 */  
+        transform: scale(1.1); /* 稍微放大以增加视觉反馈 */  
+    }  
+  
+    .hero {    
+        background: #ffffff;    
+        text-align: center;    
+        padding: 100px 20px;  
+        transition: background 0.5s ease, transform 0.5s ease; /* 添加背景渐变和缩放效果 */  
+    }  
+  
+    .hero:hover {  
+        background: #f0f8ff; /* 当鼠标悬停在hero部分时改变背景色 */  
+        transform: scale(1.02); /* 稍微放大以增加视觉反馈 */  
+    }  
+  
+    .content article a {    
+        color: #0366d6;    
+        text-decoration: none;  
+        transition: color 0.3s ease, transform 0.3s ease; /* 添加颜色渐变和缩放效果 */  
+    }  
+  
+    .content article a:hover {  
+        color: #0056b3; /* 当鼠标悬停在链接上时改变颜色 */  
+        transform: scale(1.05); /* 稍微放大以增加视觉反馈 */  
+    }  
+  
+    footer {    
+        background: #24292e;    
+        color: #ffffff;    
+        text-align: center;    
+        padding: 10px 0;    
+        margin-top: 20px;  
+        transition: background 0.3s ease, padding 0.3s ease; /* 添加背景渐变和内边距渐变效果 */  
+    }  
+  
+    footer:hover {  
+        background: #33383d; /* 当鼠标悬停在footer上时改变背景色 */  
+        padding: 15px 0; /* 当鼠标悬停在footer上时增加内边距 */  
+    }
+	</style>
+        <title>个人博客</title>  
+    </head>  
+    <body> 
+	
+    <header>  
+        <div class="container">   
+			<h1 id="blog-title">我的博客</h1>
+            <nav>  
+                <ul>  
+                    <li><a href="#home">首页</a></li>  
+                    <li><a href="#about">关于我</a></li>  
+                    <li><a href="#posts">文章</a></li>  
+                    <li><a href="#contact">联系我</a></li>  
+                </ul>  
+            </nav>  
+        </div>  
+    </header>  
+  
+    <section id="home" class="hero">  
+        <div class="container">  
+            <h2>欢迎来到我的博客</h2>  
+            <p>在这里分享我的技术见解和日常。</p>  
+        </div>  
+    </section>  
+  
+    <section id="about" class="content">  
+      <div class="container">  
+        <h2>关于我&nbsp;</h2>
+<p>一个建站初学者&nbsp;</p>  
+        </div>  
+    </section>  
+  
+    <section id="posts" class="content">  
+        <div class="container">  
+          <h2>最新文章</h2>  
+            <article>  
+                <h3>技术</h3>  
+                <p><li> <a href="https://www.csgn.net/m0_74051449/article/details/142702132?sharetype=blogdetail&sharerId=142702132&sharerefer=PC&sharesource=m0_74051449&spm=1011.2480.3001.8118">个人网页制作</a></li>&nbsp;</p>   
+            </article>  
+            <article>  
+              <h3>生活</h3>  
+                <button onclick="location.href='音乐会图片.html'">音乐会图片</button> 
+          </article>  
+        </div>  
+    </section>  
+  
+    <section id="contact" class="content">  
+        <div class="container">  
+            <h2>联系我</h2>  
+            <p>你可以通过以下方式联系我：</p>  
+            <ul>  
+                <li>邮箱: gaomo3523@hotmail.com</li>  
+                <li>GitHub: <a href="https://github.com/gaomo01" target="_blank">gaomo01</a></li>  
+                <li>CSDN: <a href="https://blog.csdn.net/m0_74051449?spm=1000.2115.3001.5343" target="_blank">镆元素</a></li>  
+            </ul>  
+        </div>  
+    </section>  
+  
+    <footer>  
+        <div class="container">  
+            <p>&copy; 2024 我的博客. 保留所有权利。</p>  
+        </div>  
+    </footer>  
+</body>  
 </html>
