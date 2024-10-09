@@ -1,0 +1,76 @@
+<!DOCTYPE html>  
+<html lang="zh-CN">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>图片展示表格</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            margin: 0;  
+            padding: 20px;  
+            background-color: #f4f4f4;  
+        }  
+  
+        table {  
+            width: 80%;  
+            margin: 0 auto;  
+            border-collapse: collapse;  
+            background-color: #fff;  
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+        }  
+  
+        th, td {  
+            border: 1px solid #ddd;  
+            padding: 15px;  
+            text-align: center;  
+        }  
+  
+        th {  
+            background-color: #f2f2f2;  
+        }  
+  
+        img {  
+            width: 100%;  
+            height: auto;  
+            transition: transform 0.3s ease;  
+        }  
+  
+        td:hover img {  
+            transform: scale(1.1); /* 悬停时放大图片 */  
+        }  
+  
+        tr:hover {  
+            background-color: #f9f9f9; /* 悬停时改变行背景色 */  
+        }  
+  
+        tr:hover td {  
+            border-color: #007bff; /* 悬停时改变边框颜色 */  
+        }  
+    </style>  
+</head>  
+<body>  
+  
+    <h1>标题&nbsp;</h1>  
+  
+    <table>  
+        <tr>  
+            <th>图片1</th>  
+            <th>图片2</th>  
+            <th>图片3</th>  
+        </tr>  
+        <tr>  
+            <td><img src="图片1.jpg" alt="图片1"></td>  
+            <td><img src="图片2.jpg" alt="图片2"></td>  
+            <td><img src="图片3.jpg" alt="图片3"></td>  
+        </tr>  
+        <tr>  
+            <td><img src="图片4.jpg" alt="图片4"></td>  
+            <td><img src="图片5.jpg" alt="图片5"></td>  
+            <td><img src="图片6.jpg" alt="图片6"></td>  
+        </tr>  
+        <!-- 可以根据需要添加更多行和图片 -->  
+    </table>  
+  
+</body>  
+</html>
