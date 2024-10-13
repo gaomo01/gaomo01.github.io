@@ -1,0 +1,128 @@
+<!DOCTYPE html>  
+<html lang="zh-CN">  
+	<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <style>
+	body {    
+        font-family: Arial, sans-serif;    
+        margin: 0;    
+        padding: 0;    
+        line-height: 1.6;    
+        background-color: #f6f8fa;    
+        transition: background-color 0.5s ease; /* 添加背景色渐变效果 */  
+    }  
+	body:hover {  
+        background-color: #eaeff5; /* 当鼠标悬停在页面上时改变背景色 */
+    }
+	.container {    
+        width: 80%;    
+        margin: 0 auto;    
+        overflow: hidden;    
+    }    
+	header {    
+        background: #24292e;    
+        color: #ffffff;    
+        padding-top: 30px;    
+        min-height: 70px;    
+        border-bottom: #e1e4e8 1px solid;  
+        transition: background 0.3s ease, transform 0.3s ease; /* 添加背景渐变和缩放效果 */  
+    }  
+	header:hover {  
+        background: #33383d; /* 当鼠标悬停在header上时改变背景色 */  
+        transform: translateY(-5px); /* 稍微向下移动以增加视觉反馈 */  
+    }  
+	header h1 {    
+        text-align: center;    
+        text-transform: uppercase;    
+        margin: 0;    
+        font-size: 24px;  
+        transition: font-size 0.3s ease; /* 添加字体大小渐变效果 */  
+    }  
+	header:hover h1 {  
+        font-size: 26px; /* 当鼠标悬停在header上时稍微增大字体 */  
+    }  
+    footer {    
+        background: #24292e;    
+        color: #ffffff;    
+        text-align: center;    
+        padding: 10px 0;    
+        margin-top: 20px;  
+        transition: background 0.3s ease, padding 0.3s ease; /* 添加背景渐变和内边距渐变效果 */  
+    }  
+  
+    footer:hover {  
+        background: #33383d; /* 当鼠标悬停在footer上时改变背景色 */  
+        padding: 15px 0; /* 当鼠标悬停在footer上时增加内边距 */  
+    }
+	</style>
+        <title>个人博客</title>  
+    </head>  
+    <body> 
+	<header>  
+        <div class="container">  
+            <h1>函数的极限或无穷大定义</h1>  
+		</div>
+	</header>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Unnamed: 0</th>
+      <th>f(x)→A</th>
+      <th>f(x)→∞</th>
+      <th>f(x)→+∞</th>
+      <th>f(x)→-∞</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>x→x₀</td>
+      <td>∀ε&gt;0, ∃​​​δ&gt;0, 使当0&lt;|x-x₀|&lt;​δ时, 有|f(x)-A|&lt;ε</td>
+      <td>∀M&gt;0, ∃​​​δ&gt;0, 使当0&lt;|x-x₀|&lt;​δ时, 有|f(x)|&gt;M</td>
+      <td>∀M&gt;0, ∃​​​δ&gt;0, 使当0&lt;|x-x₀|&lt;​δ时, 有f(x)&gt;M</td>
+      <td>∀M&gt;0, ∃​​​δ&gt;0, 使当0&lt;|x-x₀|&lt;​δ时, 有f(x)&lt;-M</td>
+    </tr>
+    <tr>
+      <td>x→x₀⁺</td>
+      <td>∀ε&gt;0, ∃​​​δ&gt;0, 使当0&lt;x-x₀&lt;δ​时, 有|f(x)-A|&lt;ε</td>
+      <td>∀M&gt;0, ∃​​​δ&gt;0, 使当0&lt;x-x₀&lt;​δ时, 有|f(x)|&gt;M</td>
+      <td>∀M&gt;0, ∃​​​δ&gt;0, 使当0&lt;x-x₀&lt;​δ时, 有f(x)&gt;M</td>
+      <td>∀M&gt;0, ∃​​​δ&gt;0, 使当0&lt;x-x₀&lt;​δ时, 有f(x)&lt;-M</td>
+    </tr>
+    <tr>
+      <td>x→x₀⁻</td>
+      <td>∀ε&gt;0, ∃​​​δ&gt;0, 使当-​δ&lt;x-x₀&lt;​0G时, 有|f(x)-A|&lt;ε</td>
+      <td>∀M&gt;0, ∃​​​δ&gt;0, 使当-​​​δ&lt;x-x₀&lt;​0时, 有|f(x)|&gt;M</td>
+      <td>∀M&gt;0, ∃​​​δ&gt;0, 使当-δ&lt;x-x₀&lt;​0时, 有f(x)&gt;M</td>
+      <td>∀M&gt;0, ∃​​​δ&gt;0, 使当-​​​δ&lt;x-x₀&lt;​0时, 有f(x)&lt;-M</td>
+    </tr>
+    <tr>
+      <td>x→∞</td>
+      <td>∀ε&gt;0, ∃​​​X&gt;0, 使当|x|&gt;X时, 有|f(x)-A|&lt;ε</td>
+      <td>∀M&gt;0, ∃​​​X&gt;0, 使当|x|&gt;X时, 有|f(x)|&gt;M</td>
+      <td>∀M&gt;0, ∃​​​X&gt;0, 使当|x|&gt;X时, 有f(x)&gt;M</td>
+      <td>∀M&gt;0, ∃​​​X&gt;0, 使当|x|&gt;X时, 有f(x)&lt;-M</td>
+    </tr>
+    <tr>
+      <td>x→+∞</td>
+      <td>∀ε&gt;0, ∃​​​X&gt;0, 使当x&gt;X时, 有|f(x)-A|&lt;ε</td>
+      <td>∀M&gt;0, ∃​​​X&gt;0, 使当x&gt;X时, 有|f(x)|&gt;M</td>
+      <td>∀M&gt;0, ∃​​​X&gt;0, 使当x&gt;X时, 有f(x)&gt;M</td>
+      <td>∀M&gt;0, ∃​​​X&gt;0, 使当x&gt;X时, 有f(x)&lt;-M</td>
+    </tr>
+    <tr>
+      <td>x→-∞</td>
+      <td>∀ε&gt;0, ∃​​​X&gt;0, 使当x&lt;-X时, 有|f(x)-A|&lt;ε</td>
+      <td>∀M&gt;0, ∃​​​X&gt;0, 使当x&lt;-X时, 有|f(x)|&gt;M</td>
+      <td>∀M&gt;0, ∃​​​X&gt;0, 使当x&lt;-X时, 有f(x)&gt;M</td>
+      <td>∀M&gt;0, ∃​​​X&gt;0, 使当x&lt;-X时, 有f(x)&lt;-M</td>
+    </tr>
+  </tbody>
+</table>
+    <footer>  
+        <div class="container">  
+            <p>&copy; 2024 我的博客. 保留所有权利。</p>  
+        </div>  
+    </footer>  
+</body>
+</html>
