@@ -1,163 +1,130 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>  
 <html lang="zh-CN">  
-<head> 
-    <meta charset="UTF-8"> 
+<head>  
+    <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <style>
-.resized-image {  
-    width: 50%; /* 或你需要的任何尺寸 */  
-    height: auto; /* 保持原始比例 */  
-}  
-	body {    
-        font-family: Arial, sans-serif;    
-        margin: 0;    
-        padding: 0;    
-        line-height: 1.6;    
-        background-color: #f6f8fa;    
-        transition: background-color 0.5s ease; /* 添加背景色渐变效果 */  
-    }  
-	body:hover {  
-        background-color: #eaeff5; /* 当鼠标悬停在页面上时改变背景色 */
-    }
-	.container {    
-        width: 80%;    
-        margin: 0 auto;    
-        overflow: hidden;    
-    }    
-	header {    
-        background: #24292e;    
-        color: #ffffff;    
-        padding-top: 30px;    
-        min-height: 70px;    
-        border-bottom: #e1e4e8 1px solid;  
-        transition: background 0.3s ease, transform 0.3s ease; /* 添加背景渐变和缩放效果 */  
-    }  
-	header:hover {  
-        background: #33383d; /* 当鼠标悬停在header上时改变背景色 */  
-        transform: translateY(-5px); /* 稍微向下移动以增加视觉反馈 */  
-    }  
-	header h1 {    
-        text-align: center;    
-        text-transform: uppercase;    
-        margin: 0;    
-        font-size: 24px;  
-        transition: font-size 0.3s ease; /* 添加字体大小渐变效果 */  
-    }  
-	header:hover h1 {  
-        font-size: 26px; /* 当鼠标悬停在header上时稍微增大字体 */  
-    }  
-  
-    nav ul li a {    
-        color: #ffffff;    
-        text-decoration: none;    
-        font-size: 16px;  
-        transition: color 0.3s ease, transform 0.3s ease; /* 添加颜色渐变和缩放效果 */  
-    }  
-  
-    nav ul li a:hover {  
-        color: #0366d6; /* 当鼠标悬停在链接上时改变颜色 */  
-        transform: scale(1.1); /* 稍微放大以增加视觉反馈 */  
-    }  
-  
-    .hero {    
-        background: #ffffff;    
-        text-align: center;    
-        padding: 100px 20px;  
-        transition: background 0.5s ease, transform 0.5s ease; /* 添加背景渐变和缩放效果 */  
-    }  
-  
-    .hero:hover {  
-        background: #f0f8ff; /* 当鼠标悬停在hero部分时改变背景色 */  
-        transform: scale(1.02); /* 稍微放大以增加视觉反馈 */  
-    }  
-  
-    .content article a {    
-        color: #0366d6;    
-        text-decoration: none;  
-        transition: color 0.3s ease, transform 0.3s ease; /* 添加颜色渐变和缩放效果 */  
-    }  
-  
-    .content article a:hover {  
-        color: #0056b3; /* 当鼠标悬停在链接上时改变颜色 */  
-        transform: scale(1.05); /* 稍微放大以增加视觉反馈 */  
-    }  
-  
-    footer {    
-        background: #24292e;    
-        color: #ffffff;    
-        text-align: center;    
-        padding: 10px 0;    
-        margin-top: 20px;  
-        transition: background 0.3s ease, padding 0.3s ease; /* 添加背景渐变和内边距渐变效果 */  
-    }  
-  
-    footer:hover {  
-        background: #33383d; /* 当鼠标悬停在footer上时改变背景色 */  
-        padding: 15px 0; /* 当鼠标悬停在footer上时增加内边距 */  
-    }
-	</style>
-   <header>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            margin: 0;  
+            padding: 0;  
+            line-height: 1.6;  
+            background-color: #f6f8fa;  
+            transition: background-color 0.5s ease;  
+        }  
+        body:hover {  
+            background-color: #eaeff5;  
+        }  
+        .container {  
+            width: 80%;  
+            margin: 0 auto;  
+            overflow: hidden;  
+        }  
+        header {  
+            background: #24292e;  
+            color: #fff;  
+            padding-top: 30px;  
+            min-height: 70px;  
+            border-bottom: 1px solid #e1e4e8;  
+            transition: background 0.3s ease, transform 0.3s ease;  
+        }  
+        header:hover {  
+            background: #33383d;  
+            transform: translateY(-5px);  
+        }  
+        header h1 {  
+            text-align: center;  
+            text-transform: uppercase;  
+            margin: 0;  
+            font-size: 24px;  
+            transition: font-size 0.3s ease;  
+        }  
+        header:hover h1 {  
+            font-size: 26px;  
+        }  
+        .resized-image {  
+            width: 50%;  
+            height: auto;  
+        }  
+        footer {  
+            background: #24292e;  
+            color: #fff;  
+            text-align: center;  
+            padding: 10px 0;  
+            margin-top: 20px;  
+            transition: background 0.3s ease, padding 0.3s ease;  
+        }  
+        footer:hover {  
+            background: #33383d;  
+            padding: 15px 0;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <header>  
+        <div class="container">  
+            <h1>个人网站制作</h1>  
+        </div>  
+    </header>  
     <div class="container">  
-        <h1>个人网站制作</h1>   
-    </div>  
-</header>  
-
-<h2>概要</h2>
-<p>个人制作网站（初学者制作，有错误请提醒。我将在看到的第一时间改正）
-用GitHub作为服务器是个人原因，仍建议使用大厂云服务器以获得更稳定的数据传输服务。</p>
-<h2>整体架构流程</h2>
-<p>1.购买域名
-2.申请cloudflare账号并选择SSL/TLS证书
-3.申请GitHub账号并创建库
-4.将GitHub用cloudflare代理链接域名
-5.测试连通性</p>
-<h2>技术名词解释</h2>
-<p>GitHub
-cloudflare
-阿里云域名
-阿里云运维检测平台</p>
+        <h2>概要</h2>  
+        <p>个人制作网站（初学者制作，有错误请提醒。我将在看到的第一时间改正）用GitHub作为服务器是个人原因，仍建议使用大厂云服务器以获得更稳定的数据传输服务。</p>  
+         <h2>整体架构流程</h2>
+		<p>1.购买域名</p>
+	    <p>2.申请cloudflare账号并选择SSL/TLS证书</p>
+	    <p>3.申请GitHub账号并创建库</p>
+        <p>4.将GitHub用cloudflare代理链接域名</p>
+        <p>5.测试连通性</p>
+        <h2>技术名词解释</h2>
+		<p>GitHub</p>
+		<p>cloudflare</p>
+		<p>阿里云域名</p>
+        <p>阿里云运维检测平台</p>
 <h2>技术细节</h2>
-<p>1.购买域名：我个人在阿里云域名中购买的域名，还有其他平台可供选择，如腾讯云、华为云等。
-2.申请cloudflare：</p>
-<p>1）点击右上角的注册
+		<p>1.购买域名：我个人在阿里云域名中购买的域名，还有其他平台可供选择，如腾讯云、华为云等。</p>
+<p>2.申请cloudflare：</p>
+		<p>1）点击右上角的注册</p>
 	
 <img alt="注册cloudflare" src="../photofiles/personalblogbuilding/image-1.png" class="resized-image" />
 	
-2）输入你的电子邮件和密码，点击注册</p>
+<p>2）输入你的电子邮件和密码，点击注册</p>
 <p>3）登录你的账号，选择添加一个网站（add a site）</p>
 <p>4）输入网站域名（domain），注意不要带https://或http://</p>
 <p>5）选择一个服务计划，我选择免费的</p>
 <p>6）更改你的域名服务器。这里需要你复制cloudflare的服务器名称，并粘贴更改你在购买域名时购买平台自动分配的服务器位置。下面我介绍一下阿里云的更改方式（图片形式）。</p>
-<p>第一步：选择控制台
+		<p>第一步：选择控制台</p>
 	
 <img alt="选择控制台" src="../photofiles/personalblogbuilding/image-2.png" class="resized-image"/>
 	
-第二步：选择域名
+		<p>第二步：选择域名</p>
 	
 <img alt="选择域名" src="../photofiles/personalblogbuilding/image-3.png" class="resized-image"/>
 	
-第三步：找到你购买的域名并点击
+		<p>第三步：找到你购买的域名并点击</p>
 	
 <img alt="找域名" src="../photofiles/personalblogbuilding/image-4.png" class="resized-image"/>
 	
-第四步：更改DNS服务器，单击
+		<p>第四步：更改DNS服务器，单击</p>
 	
 <img alt="改DNS服务器" src="../photofiles/personalblogbuilding/image-5.png" class="resized-image"/>
 	
-第五步：将复制的cloudflare服务器地址粘贴到此处</p>
+        <p>第五步：将复制的cloudflare服务器地址粘贴到此处</p>
 <p>完成</p>
 <p>3.注册GitHub并创建仓库</p>
 <p>1）到GitHub官网注册账号，输入邮件和密码，并取一个名字，这就是你的用户名</p>
-<p>2）创建仓库，选择New，名字为username.github.io，username为自己起的名字
+		<p>2）创建仓库，选择New，名字为username.github.io，username为自己起的名字</p>
 	
-<img alt="创建新仓库" src="../photofiles/personalblogbuilding/image-6.png" class="resized-image"/></p>
+<img alt="创建新仓库" src="../photofiles/personalblogbuilding/image-6.png" class="resized-image"/>
 	
 <p>3）在仓库里选择createing a new file，名字为index.html，内容为网页程序，html格式</p>
 <p>4）再做一个新文件，名字为CNAME，内容为你购买的域名</p>
 <p>4.回到cloudflare。登录后点击仪表板中的域名，将SSL/TLS概述中的选项选为灵活。选择左侧目录中的DNS，找到记录，打开，选择管理中的添加记录，类型为CNAME，名称中输入@，内容输入你在github中创建的username.github.io（再次说明：username为自己起的名字），剩余选项不用处理。点击保存</p>
 <p>5.一段时间后，用阿里云运维检测检查网站状态。如DNS解析成功，则建站成功；若未能解析DNS，则需要检查问题出现的地方。</p>
-<footer>  
-    <div class="container">  
-        <p>&copy; 2024 我的博客. 保留所有权利。</p>  
+        <footer>  
+            <div class="container">  
+                <p>&copy; 2024 我的博客. 保留所有权利。</p>  
+            </div>  
+        </footer>  
     </div>  
-</footer> 
+</body>  
+</html>
