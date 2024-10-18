@@ -5,123 +5,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>无人机表演</title>  
     <style>  
+	    header {    
+        background: #24292e;    
+        color: #ffffff;    
+        padding-top: 30px;    
+        min-height: 70px;    
+        border-bottom: #e1e4e8 1px solid;  
+        transition: background 0.3s ease, transform 0.3s ease; /* 添加背景渐变和缩放效果 */  
+    }  
+	header:hover {  
+        background: #33383d; /* 当鼠标悬停在header上时改变背景色 */  
+        transform: translateY(-5px); /* 稍微向下移动以增加视觉反馈 */  
+    }  
+	header h1 {    
+        text-align: center;    
+        text-transform: uppercase;    
+        margin: 0;    
+        font-size: 24px;  
+        transition: font-size 0.3s ease; /* 添加字体大小渐变效果 */  
+    }  
+	header:hover h1 {  
+        font-size: 26px; /* 当鼠标悬停在header上时稍微增大字体 */  
+    }  
+  
         body {  
             font-family: Arial, sans-serif;  
-            margin: 0;  
-            padding: 20px;  
-            background-color: #f4f4f4;  
         }  
   
         table {  
-            width: 80%;  
-            margin: 0 auto;  
+            width: 100%;  
             border-collapse: collapse;  
-            background-color: #fff;  
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
         }  
   
         th, td {  
             border: 1px solid #ddd;  
-            padding: 15px;  
-            text-align: center;  
+            padding: 8px;  
         }  
   
         th {  
             background-color: #f2f2f2;  
+            text-align: center;  
         }  
   
         img {  
             width: 100%;  
             height: auto;  
-            transition: transform 0.3s ease;  
         }  
   
-        td:hover img {  
-            transform: scale(1.1); /* 悬停时放大图片 */  
+        /* 添加弹窗样式 */  
+        .modal {  
+            display: none; /* 默认隐藏 */  
+            position: fixed;  
+            z-index: 1;  
+            left: 0;  
+            top: 0;  
+            width: 100%;  
+            height: 100%;  
+            overflow: auto;  
+            background-color: rgb(0,0,0);  
+            background-color: rgba(0,0,0,0.4); /* 黑色背景带透明度 */  
         }  
   
-        tr:hover {  
-            background-color: #f9f9f9; /* 悬停时改变行背景色 */  
+        .modal-content {  
+            margin: auto;  
+            display: block;  
+            width: 80%;  
+            max-width: 700px;  
         }  
   
-        tr:hover td {  
-            border-color: #007bff; /* 悬停时改变边框颜色 */  
+        .modal-content {  
+            animation-name: zoom;  
+            animation-duration: 0.6s;  
         }  
+  
+        @keyframes zoom {  
+            from {transform: scale(0)}  
+            to {transform: scale(1)}  
+        }  
+  
+        .close {  
+            position: absolute;  
+            top: 15px;  
+            right: 35px;  
+            color: #fff;  
+            font-size: 40px;  
+            font-weight: bold;  
+            transition: 0.3s;  
+        }  
+  
+        .close:hover,  
+        .close:focus {  
+            color: #bbb;  
+            text-decoration: none;  
+            cursor: pointer;  
+        } 
+		    footer {    
+        background: #24292e;    
+        color: #ffffff;    
+        text-align: center;    
+        padding: 10px 0;    
+        margin-top: 20px;  
+        transition: background 0.3s ease, padding 0.3s ease; /* 添加背景渐变和内边距渐变效果 */  
+    }  
+  
+    footer:hover {  
+        background: #33383d; /* 当鼠标悬停在footer上时改变背景色 */  
+        padding: 15px 0; /* 当鼠标悬停在footer上时增加内边距 */  
+    }
     </style>  
 </head>  
-<body>  
+<body> 
+    <header>  
+        <div class="container">  
+            <h1>我的博客</h1>  
+        </div>  
+    </header>  
   
-    <h1>无人机表演图片&nbsp;</h1>  
+<h1>无人机表演图片</h1>  
   
-    <table>  
-        <tr>  
-            <th>图片1</th>  
-            <th>图片2</th>  
-            <th>图片3</th> 
-		</tr>
-        <tr>  
-            <td><img src="../photofiles/drone art/photo01.jpg" alt="图片1"></td>  
-            <td><img src="../photofiles/drone art/photo02.jpg" alt="图片2"></td>  
-            <td><img src="../photofiles/drone art/photo03.jpg" alt="图片3"></td>  
-        </tr>
-	</table>
-	<table>
-		<tr>  
-            <th>图片4</th>  
-            <th>图片5</th>  
-            <th>图片6</th> 
-		</tr> 
-        <tr>  
-            <td><img src="../photofiles/drone art/photo04.jpg" alt="图片4"></td>  
-            <td><img src="../photofiles/drone art/photo05.jpg" alt="图片5"></td>  
-            <td><img src="../photofiles/drone art/photo06.jpg" alt="图片6"></td>  
-        </tr>  
-        <!-- 可以根据需要添加更多行和图片 -->  
-    </table>  
-  <!-- 弹窗的HTML -->  
+<!-- 第一个表格 -->  
+<table>  
+    <tr>  
+        <th>图片1</th>  
+        <th>图片2</th>  
+        <th>图片3</th>  
+    </tr>  
+    <tr>  
+        <td><a href="#" class="open-modal" onclick="openModal('../photofiles/drone art/photo01.jpg')"><img src="../photofiles/drone art/photo01_thumb.jpg" alt="图片1"></a></td>  
+        <td><a href="#" class="open-modal" onclick="openModal('../photofiles/drone art/photo02.jpg')"><img src="../photofiles/drone art/photo02_thumb.jpg" alt="图片2"></a></td>  
+        <td><a href="#" class="open-modal" onclick="openModal('../photofiles/drone art/photo03.jpg')"><img src="../photofiles/drone art/photo03_thumb.jpg" alt="图片3"></a></td>  
+    </tr>  
+</table>  
+  
+<!-- 第二个表格 -->  
+<table>  
+    <tr>  
+        <th>图片4</th>  
+        <th>图片5</th>  
+        <th>图片6</th>  
+    </tr>  
+    <tr>  
+        <td><a href="#" class="open-modal" onclick="openModal('../photofiles/drone art/photo04.jpg')"><img src="../photofiles/drone art/photo04_thumb.jpg" alt="图片4"></a></td>  
+        <td><a href="#" class="open-modal" onclick="openModal('../photofiles/drone art/photo05.jpg')"><img src="../photofiles/drone art/photo05_thumb.jpg" alt="图片5"></a></td>  
+        <td><a href="#" class="open-modal" onclick="openModal('../photofiles/drone art/photo06.jpg')"><img src="../photofiles/drone art/photo06_thumb.jpg" alt="图片6"></a></td>  
+    </tr>  
+</table>  
+  
+<!-- 模态弹窗 -->  
 <div id="myModal" class="modal">  
     <span class="close" onclick="closeModal()">&times;</span>  
-    <img class="modal-content" id="img01">  
+    <img class="modal-content" id="modalImage">  
 </div>  
   
 <script>  
-// 获取模态弹窗  
-var modal = document.getElementById("myModal");  
-  
-// 获取图片和插入模态弹窗 - 使用其 "alt" 文本作为标题  
-var img = document.getElementById("img01");  
-var modalImg = document.getElementsByClassName("open-modal");  
-  
-// 当用户点击图片时，打开模态弹窗  
-for (var i = 0; i < modalImg.length; i++) {  
-    modalImg[i].onclick = function(){  
-        modal.style.display = "block";  
-        img.src = this.href;  
+    function openModal(imgSrc) {  
+        document.getElementById('myModal').style.display = "block";  
+        document.getElementById('modalImage').src = imgSrc;  
     }  
-}  
   
-// 当用户点击 <span> (x), 关闭模态弹窗  
-var span = document.getElementsByClassName("close")[0];  
-span.onclick = function() {   
-    modal.style.display = "none";  
-}  
-  
-// 当用户在模态弹窗外点击时，关闭模态弹窗  
-window.onclick = function(event) {  
-    if (event.target == modal) {  
-        modal.style.display = "none";  
+    function closeModal() {  
+        document.getElementById('myModal').style.display = "none";  
     }  
-}  
-  
-function openModal(event) {  
-    event.preventDefault(); // 阻止链接跳转
-    modal.style.display = "block";  
-    img.src = event.target.href;  
-}  
-  
-function closeModal() {  
-    modal.style.display = "none";  
-}  
 </script> 
+    <footer>  
+        <div class="container">  
+            <p>&copy; 2024 我的博客. 保留所有权利。</p>  
+        </div>  
+    </footer>  
+  
 </body>  
 </html>
