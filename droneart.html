@@ -78,6 +78,50 @@
         </tr>  
         <!-- 可以根据需要添加更多行和图片 -->  
     </table>  
+  <!-- 弹窗的HTML -->  
+<div id="myModal" class="modal">  
+    <span class="close" onclick="closeModal()">&times;</span>  
+    <img class="modal-content" id="img01">  
+</div>  
   
+<script>  
+// 获取模态弹窗  
+var modal = document.getElementById("myModal");  
+  
+// 获取图片和插入模态弹窗 - 使用其 "alt" 文本作为标题  
+var img = document.getElementById("img01");  
+var modalImg = document.getElementsByClassName("open-modal");  
+  
+// 当用户点击图片时，打开模态弹窗  
+for (var i = 0; i < modalImg.length; i++) {  
+    modalImg[i].onclick = function(){  
+        modal.style.display = "block";  
+        img.src = this.href;  
+    }  
+}  
+  
+// 当用户点击 <span> (x), 关闭模态弹窗  
+var span = document.getElementsByClassName("close")[0];  
+span.onclick = function() {   
+    modal.style.display = "none";  
+}  
+  
+// 当用户在模态弹窗外点击时，关闭模态弹窗  
+window.onclick = function(event) {  
+    if (event.target == modal) {  
+        modal.style.display = "none";  
+    }  
+}  
+  
+function openModal(event) {  
+    event.preventDefault(); // 阻止链接跳转
+    modal.style.display = "block";  
+    img.src = event.target.href;  
+}  
+  
+function closeModal() {  
+    modal.style.display = "none";  
+}  
+</script> 
 </body>  
 </html>
