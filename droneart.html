@@ -3,88 +3,81 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>无人机表演</title>  
+    <title>图片展示表格</title>  
     <style>  
-			header {    
-        background: #24292e;    
-        color: #ffffff;    
-        padding-top: 30px;    
-        min-height: 70px;    
-        border-bottom: #e1e4e8 1px solid;  
-        transition: background 0.3s ease, transform 0.3s ease; /* 添加背景渐变和缩放效果 */  
-    }  
-	header:hover {  
-        background: #33383d; /* 当鼠标悬停在header上时改变背景色 */  
-        transform: translateY(-5px); /* 稍微向下移动以增加视觉反馈 */  
-    }  
-	header h1 {    
-        text-align: center;    
-        text-transform: uppercase;    
-        margin: 0;    
-        font-size: 24px;  
-        transition: font-size 0.3s ease; /* 添加字体大小渐变效果 */  
-    }  
-	header:hover h1 {  
-        font-size: 26px; /* 当鼠标悬停在header上时稍微增大字体 */  
-    }  
         body {  
             font-family: Arial, sans-serif;  
             margin: 0;  
             padding: 20px;  
-            background-color: #f0f0f0;  
+            background-color: #f4f4f4;  
         }  
-        .video-list {  
-            list-style-type: none; /* 移除列表项前的默认标记 */  
-            padding: 0;  
-            margin: 0;  
-        }  
-        .video-list li {  
-            margin-bottom: 20px;  
+  
+        table {  
+            width: 80%;  
+            margin: 0 auto;  
+            border-collapse: collapse;  
             background-color: #fff;  
-            padding: 15px;  
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
         }  
-        video {  
-            width: 100%;  
-            max-width: 600px; /* 可选：限制视频最大宽度 */  
-            height: auto;  
-        } 
-    footer {    
-        background: #24292e;    
-        color: #ffffff;    
-        text-align: center;    
-        padding: 10px 0;    
-        margin-top: 20px;  
-        transition: background 0.3s ease, padding 0.3s ease; /* 添加背景渐变和内边距渐变效果 */  
-    }  
   
-    footer:hover {  
-        background: #33383d; /* 当鼠标悬停在footer上时改变背景色 */  
-        padding: 15px 0; /* 当鼠标悬停在footer上时增加内边距 */  
-    }
+        th, td {  
+            border: 1px solid #ddd;  
+            padding: 15px;  
+            text-align: center;  
+        }  
+  
+        th {  
+            background-color: #f2f2f2;  
+        }  
+  
+        img {  
+            width: 100%;  
+            height: auto;  
+            transition: transform 0.3s ease;  
+        }  
+  
+        td:hover img {  
+            transform: scale(1.1); /* 悬停时放大图片 */  
+        }  
+  
+        tr:hover {  
+            background-color: #f9f9f9; /* 悬停时改变行背景色 */  
+        }  
+  
+        tr:hover td {  
+            border-color: #007bff; /* 悬停时改变边框颜色 */  
+        }  
     </style>  
 </head>  
 <body>  
-	    <header>  
-        <div class="container">  
-            <h1>无人机表演</h1>  
-        </div>  
-    </header>  
-    <ul class="video-list">  
-        <li>  
-            <h2>视频</h2> 
-	    <h3>（转自上海师范大学公众号）</h3>
-            <video controls>  
-                <source src="../video/drone art/955099113.mp4" type="video/mp4">  
-                <source src="my-video.webm" type="video/webm">  
-                您的浏览器不支持视频播放，请升级浏览器或尝试使用其他浏览器。  
-            </video>  
-        </li>  
-    </ul>
-    <footer>  
-        <div class="container">  
-            <p>&copy; 2024 我的博客. 保留所有权利。</p>  
-        </div>  
-    </footer>  
+  
+    <h1>音乐会图片&nbsp;</h1>  
+  
+    <table>  
+        <tr>  
+            <th>图片1</th>  
+            <th>图片2</th>  
+            <th>图片3</th> 
+		</tr>
+        <tr>  
+            <td><img src="../photofiles/drone art/photo01.jpg" alt="图片1"></td>  
+            <td><img src="../photofiles/drone art/photo02.jpg" alt="图片2"></td>  
+            <td><img src="../photofiles/drone art/photo03.jpg" alt="图片3"></td>  
+        </tr>
+	</table>
+	<table>
+		<tr>  
+            <th>图片4</th>  
+            <th>图片5</th>  
+            <th>图片6</th> 
+		</tr> 
+        <tr>  
+            <td><img src="../photofiles/drone art/photo04.jpg" alt="图片4"></td>  
+            <td><img src="../photofiles/drone art/photo05.jpg" alt="图片5"></td>  
+            <td><img src="../photofiles/drone art/photo06.jpg" alt="图片6"></td>  
+        </tr>  
+        <!-- 可以根据需要添加更多行和图片 -->  
+    </table>  
+  
 </body>  
 </html>
